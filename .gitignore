@@ -1,0 +1,10 @@
+# Ignore datasets
+data/
+
+# Ignore models
+*.keras
+*.h5
+
+# Python
+__pycache__/
+.env
