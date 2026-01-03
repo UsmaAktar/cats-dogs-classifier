@@ -1,7 +1,6 @@
 import tensorflow as tf
 from keras import layers, models
 from keras.preprocessing import image_dataset_from_directory
-from keras.preprocessing.image import ImageDataGenerator
 
 # ---------------------------
 # Parameters
@@ -14,9 +13,6 @@ DATA_DIR = "data"
 # ---------------------------
 # Load datasets
 # ---------------------------
-
-train_ds = ImageDataGenerator(rescale=1./255)
-val_ds = ImageDataGenerator(rescale=1./255)
 
 train_ds = image_dataset_from_directory(
     DATA_DIR + "/train",
