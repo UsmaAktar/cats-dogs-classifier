@@ -7,7 +7,7 @@ from keras.models import load_model
 # ---------------------------
 # Title
 # ---------------------------
-st.title("🐱🐶 Cats vs Dogs Classifier")
+st.title("🐱🐶 Cats vs Dogs Classifier*****************")
 
 # ---------------------------
 # Load model
