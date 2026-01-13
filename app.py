@@ -30,11 +30,11 @@ file = st.file_uploader(
 
 if file:
     image = Image.open(file).convert("RGB")
-    st.image(image, caption="Uploaded Image", use_container_width=True)
+    st.image(image, caption="Uploaded Image", width="stretch")
 
     # Preprocess
     img = image.resize((150, 150))
-    img_array = np.array(img) / 255.0
+    img_array = np.array(img)
     img_array = np.expand_dims(img_array, axis=0)
 
     # Predict

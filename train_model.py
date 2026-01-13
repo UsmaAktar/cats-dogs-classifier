@@ -6,8 +6,8 @@ from keras.preprocessing import image_dataset_from_directory
 # Parameters
 # ---------------------------
 IMG_SIZE = (150, 150)
-BATCH_SIZE = 32
-EPOCHS = 10
+BATCH_SIZE = 20
+EPOCHS = 30
 DATA_DIR = "data"
 
 # ---------------------------
@@ -59,11 +59,11 @@ model = models.Sequential([
 # ---------------------------
 # Compile
 # ---------------------------
-model.compile(
-    optimizer="adam",
-    loss="binary_crossentropy",
-    metrics=["accuracy"]
-)
+from keras import optimizers
+
+model.compile(loss='binary_crossentropy', 
+              optimizer=optimizers.RMSprop(learning_rate=0.0001), 
+              metrics=['acc'])
 
 # ---------------------------
 # Train
@@ -72,7 +72,8 @@ model.fit(
     train_ds,
     validation_data=val_ds,
     steps_per_epoch=100,
-    epochs=EPOCHS
+    epochs=EPOCHS,
+    validation_steps=50
 )
 
 # ---------------------------
